@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meal Picker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <h1>Meal Picker</h1>
+
+  <form id="controls" autocomplete="off">
+    <label>People <input id="people" type="number" min="1" max="10" value="2" inputmode="numeric"></label>
+    <label>Lunch days <input id="days" type="number" min="0" max="7" value="5" inputmode="numeric"></label>
+    <label>Lunches <input id="lunches" type="number" min="0" max="5" value="2" inputmode="numeric"></label>
+    <label>Dinners <input id="dinners" type="number" min="0" max="7" value="4" inputmode="numeric"></label>
+    <label class="check"><input id="leftovers" type="checkbox" checked> Leftovers</label>
+    <button id="go" type="submit">Randomize</button>
+  </form>
+
+  <section id="lunchSec" hidden>
+    <h2>Lunches <small>Prep once · fridge 4 days · freeze day 5</small></h2>
+    <div id="lunchList" class="grid"></div>
+  </section>
+
+  <section id="dinnerSec" hidden>
+    <h2>Dinners</h2>
+    <div id="dinnerList" class="grid"></div>
+  </section>
+
+  <details id="shopSec" class="shop" hidden>
+    <summary>Shopping list <button id="copy" type="button" class="link">Copy</button></summary>
+    <div id="shopList"></div>
+  </details>
+
+  <footer>Salt, pepper &amp; water not listed. Check bread, tortilla &amp; sausage labels for milk.</footer>
+</main>
+<script src="recipes.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
